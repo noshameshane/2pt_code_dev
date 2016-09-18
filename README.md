@@ -1,10 +1,15 @@
 # 2pt_code_dev
 Code for Converting 2pt into atom by atom analysis
 
-Step 1 is to compile the code on wagland. 
+Step 1:
+Set up git hub account and get everything working.
+This is complete!
 
-Step 2 is to copy over my notes from the meeting with Bill.
+Step 2:
+Compile the original code on wag land.
 
-Step 3 is to get a DOS for all molecules
+Step 3:
+Copy over my notes from the meeting with Bill and Shiang Tai. 
 
-I am using github to version control.
+Step 4:
+Start by editing the code to get a DOS for all molecules as a seperate file.
