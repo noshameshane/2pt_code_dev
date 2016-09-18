@@ -1,0 +1,34 @@
+OBJS = driver.o model.o structure.o control.o analysis.o forcefield.o utility.o statistics.o \
+       trajectory.o timing.o property.o 
+OPTFLAGS = -O3 -Wno-deprecated 
+LIBFLAGS = -lm -lfftw3 -lz -L/ul/stlin/local/lib/
+CC = g++
+CDEBUG =
+
+driver : ${OBJS}
+	${CC} ${OPTFLAGS} ${MATFOR} -o $@ ${OBJS}  ${LIBFLAGS}
+
+driver.o : driver.cpp analysis.h model.h 
+structure.o : structure.cpp structure.h
+model.o : model.cpp model.h forcefield.h property.h structure.h constant.h trajectory.h control.h
+trajectory.o : trajectory.cpp trajectory.h constant.h structure.h property.h
+control.o : control.cpp control.h constant.h
+analysis.o : analysis.cpp analysis.h model.h statistics.h utility.h
+forcefield.o : forcefield.cpp forcefield.h constant.h 
+utility.o : utility.cpp utility.h 
+statistics.o : statistics.cpp statistics.h 
+timing.o : timing.cpp timing.h 
+property.o : property.cpp property.h
+
+%.o : %.cpp
+	${CC} ${OPTFLAGS} ${CDEBUG} -o $@ -c $< 
+#${CC} ${OPTFLAGS} ${CDEBUG} ${LIBFLAGS} -o $@ -c $< 
+#${CC} ${OPTFLAGS} ${CDEBUG} -o $@ -c $< ${LIBFLAGS}
+
+clean:
+	rm -f *.o out core *.out
+
+release:
+	rm -f *.o; make -f makefile.linux; cp driver md_driver
+
+

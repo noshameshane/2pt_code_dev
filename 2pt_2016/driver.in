@@ -1,0 +1,18 @@
+ IN_LMPDATA   /ul/stlin/2pt/data.spc_w
+ IN_C2TRJ     /ul/stlin/2pt/spc_w.trj
+
+ 
+ ANALYSIS_FRAME_INITIAL        1
+ ANALYSIS_FRAME_FINAL          0
+ ANALYSIS_FRAME_STEP           1
+
+ ANALYSIS_VAC_CORLENGTH                   0.5
+ ANALYSIS_VAC_MEMORYMB                    500
+ ANALYSIS_VAC_2PT                         3
+#ANALYSIS_VAC_2PT 3 (2PT)  4 (2PT-MF)
+#ANALYSIS_VAC_FIXED_DF                    1104
+#ANALYSIS_VAC_ROTN_SYMMETRY               1
+#ANALYSIS_VAC_LINEAR_MOL                  0
+#IN_GROUPFILE                             grp_2pt.txt
+
+
